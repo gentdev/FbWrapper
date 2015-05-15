@@ -1,6 +1,7 @@
 package parse;
 
 import entity.Person;
+import entity.Relationships;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -38,9 +39,9 @@ public class parsePerson {
             personsFB = doc.getElementsByTag("li");
         }
 
+        Relationships relationship = new Relationships();
         for (Element personFB : personsFB) {
-            FacebookFriend = new Person(personFB.text(), personFB.text());
-            FBFriendList.add(FacebookFriend);
+            relationship.addPerson(personFB.text(), personFB.text());
         }
 
         return FBFriendList;
