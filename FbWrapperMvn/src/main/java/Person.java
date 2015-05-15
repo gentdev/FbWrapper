@@ -9,7 +9,7 @@ public class Person {
 
     Person(String FirstName, String Name)
     {
-        this.Friends = new ArrayList<Relation>();
+        this.Friends = new ArrayList<Person>();
         this.FirstName = FirstName;
         this.Name = Name;
         this.ID = java.util.UUID.randomUUID();
@@ -18,7 +18,7 @@ public class Person {
     UUID ID;
     String FirstName;
     String Name;
-    List<Relation> Friends;
+    List<Person> Friends;
 
     public String getFirstName()
     {
@@ -32,15 +32,15 @@ public class Person {
     {
         return this.ID;
     }
-    public void addFriend(Relation Friend)
+    public void addFriend(Person Friend)
     {
         this.Friends.add(Friend);
     }
-    public void removeFriend(Relation Friend)
+    public void removeFriend(Person Friend)
     {
         this.Friends.remove(Friend);
     }
-    public List<Relation> getFriendList()
+    public List<Person> getFriendList()
     {
         return this.Friends;
     }
