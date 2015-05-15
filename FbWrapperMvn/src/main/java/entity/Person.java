@@ -10,18 +10,17 @@ import java.util.UUID;
  */
 public class Person {
 
-    Person(String FirstName, String Name)
-    {
+    UUID ID;
+    String FirstName;
+    String Name;
+    List<Person> Friends;
+
+    public Person(String FirstName, String Name) {
         this.Friends = new ArrayList<Person>();
         this.FirstName = FirstName;
         this.Name = Name;
         this.ID = java.util.UUID.randomUUID();
     }
-
-    UUID ID;
-    String FirstName;
-    String Name;
-    List<Person> Friends;
 
     public String getFirstName()
     {

@@ -8,18 +8,17 @@ import java.util.UUID;
  * Created by hannes on 15/05/2015.
  */
 public class Relationships {
+    List<Person> ListOfPersons;
+    List<Relation> ListOfRelations;
     public Relationships()
     {
         this.ListOfPersons = new ArrayList<Person>();
         this.ListOfRelations = new ArrayList<Relation>();
     }
 
-    List<Person> ListOfPersons;
-    List<Relation> ListOfRelations;
-
-    public void addRelationship(Person Person1, Person Person2)
+    public void addRelationship(Person Person1, Person Person2, int interactionCount)
     {
-        Relation relation = new Relation(Person1, Person2);
+        Relation relation = new Relation(Person1, Person2, interactionCount);
         ListOfRelations.add(relation);
         Person1.addFriend(Person2);
         Person2.addFriend(Person1);
@@ -36,10 +35,13 @@ public class Relationships {
             }
         }
     }
-    public void addPerson(String FirstName, String Name)
+
+    public Person addPerson(String FirstName, String Name)
     {
         Person Identity = new Person(FirstName, Name);
         ListOfPersons.add(Identity);
+
+        return Identity;
     }
     public Person getPerson(String FirstName, String Name)
     {

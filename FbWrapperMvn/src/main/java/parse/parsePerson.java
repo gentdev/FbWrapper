@@ -39,11 +39,12 @@ public class parsePerson {
             personsFB = doc.getElementsByTag("li");
         }
 
-        Relationships relationship = new Relationships();
         for (Element personFB : personsFB) {
-            relationship.addPerson(personFB.text(), personFB.text());
-        }
 
+            FacebookFriend = new Person(personFB.text(), personFB.text());
+            FBFriendList.add(FacebookFriend);
+
+        }
         return FBFriendList;
     }
 }
