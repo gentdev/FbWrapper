@@ -1,3 +1,5 @@
+package entity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -7,18 +9,17 @@ import java.util.UUID;
  */
 public class Person {
 
-    Person(String FirstName, String Name)
-    {
+    public String FirstName;
+    UUID ID;
+    String Name;
+    List<Relation> Friends;
+
+    public Person(String FirstName, String Name) {
         this.Friends = new ArrayList<Relation>();
         this.FirstName = FirstName;
         this.Name = Name;
         this.ID = java.util.UUID.randomUUID();
     }
-
-    UUID ID;
-    String FirstName;
-    String Name;
-    List<Relation> Friends;
 
     public String getFirstName()
     {
